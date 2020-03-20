@@ -4,4 +4,6 @@ class PigLatinizer
   def initialize(words)
     @words = words
   end
+  
+  def piglatinize 
 end
