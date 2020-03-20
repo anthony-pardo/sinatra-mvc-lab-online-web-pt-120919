@@ -6,15 +6,18 @@ class PigLatinizer
     vowels = %w[a e i o u]
     consonants = alpha - vowels
   
+    arr = []
     words.each do |word| 
-      if vowels.include?(str[0])
-        str + 'ay'
-      elsif consonants.include?(str[0]) && consonants.include?(str[1])
-        str[2..-1] + str[0..1] + 'ay'
-      elsif consonants.include?(str[0])
-        str[1..-1] + str[0] + 'ay'
+      if vowels.include?(word[0])
+        arr << word + 'ay'
+      elsif consonants.include?(word[0]) && consonants.include?(word[1])
+        arr << word[2..-1] + word[0..1] + 'ay'
+      elsif consonants.include?(word[0])
+        arr << word[1..-1] + word[0] + 'ay'
       else
-        str # return unchanged
+        arr << word # return unchanged
       end
+    end
+    arr.join(' ')
   end
 end
