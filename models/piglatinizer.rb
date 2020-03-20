@@ -3,7 +3,7 @@ class PigLatinizer
     words = str.split(' ')
     
     alpha = ('a'..'z').to_a
-    vowels = %w[a e i o u]
+    vowels = %w[a e i o u A E I O U]
     consonants = alpha - vowels
   
     arr = []
