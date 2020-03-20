@@ -9,11 +9,11 @@ class PigLatinizer
     arr = []
     words.each do |word| 
       if vowels.include?(word[0])
-        arr << word + 'ay'
+        arr << (word + 'way')
       elsif consonants.include?(word[0]) && consonants.include?(word[1])
-        arr << word[2..-1] + word[0..1] + 'ay'
+        arr << (word[2..-1] + word[0..1] + 'ay')
       elsif consonants.include?(word[0])
-        arr << word[1..-1] + word[0] + 'ay'
+        arr << (word[1..-1] + word[0] + 'ay')
       else
         arr << word # return unchanged
       end
